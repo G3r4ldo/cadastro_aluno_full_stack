@@ -1,0 +1,13 @@
+// cSpell Settings
+{
+   
+    // words - list of words to be always considered correct
+    "words": [
+        "knexfile",
+        "unmocked",
+        "sqlite",
+        "Academico",
+        "apinodets",
+        "acces"
+    ]
+}
