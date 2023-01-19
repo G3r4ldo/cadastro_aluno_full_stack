@@ -1,0 +1,12 @@
+// cSpell Settings
+{
+   
+    // words - list of words to be always considered correct
+    "words": [
+        "esnext",
+        "Academico",
+        "Botao",
+        "unform",
+        "linebreak"
+    ]
+}

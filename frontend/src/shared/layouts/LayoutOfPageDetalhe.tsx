@@ -5,12 +5,15 @@ import React from 'react';
 
 interface ILayoutOfPage {
     menu: React.ReactNode;
-    titulo?: string;
-    paginaResponsiva?: React.ReactNode;
+    titulo: string;
+    paginaResponsiva: React.ReactNode;
+    children?: React.ReactNode;
+    children2?: React.ReactNode;
 }
 
-export const LayoutOfPage : React.FC<ILayoutOfPage> = ({menu, titulo, paginaResponsiva}) => {
+export const LayoutOfPageDetalhe : React.FC<ILayoutOfPage> = ({menu, titulo, paginaResponsiva, children, }) => {
   const smDown = useMediaQuery ('(min-width:240px)');
+
 
   
 
@@ -24,7 +27,9 @@ export const LayoutOfPage : React.FC<ILayoutOfPage> = ({menu, titulo, paginaResp
             {titulo}
           </Typography>
         </Box>
+        {children}
         {paginaResponsiva}
+       
       </Box>
     </Box>
   );
