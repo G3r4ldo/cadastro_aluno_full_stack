@@ -75,7 +75,7 @@ export const DetalheDeAluno: React.FC = () => {
           validationErrors[error.path] = error.message;
         });
 
-        formRef.current?.setErrors;
+        formRef.current?.setErrors(validationErrors);
       });
   };
 
@@ -118,7 +118,7 @@ export const DetalheDeAluno: React.FC = () => {
             <Grid container item direction='row'>
               <Box display='flex'
                 width={170}
-                height={40}
+                height={35}
                 bgcolor='#eeeeee'
                 marginLeft={3}
                 border='1.5px solid #cccccc'
@@ -132,7 +132,7 @@ export const DetalheDeAluno: React.FC = () => {
                 <VTextField name='nome' sx={{ width: '450px'}} placeholder='Informe o nome completo' variant='standard' 
                   inputProps={{sx:{
                     padding:'0px',
-                    height:'40px',
+                    height:'35px',
                     paddingLeft:'15px',
                     paddingRight:'15px',
                     border:'1.5px solid #d6d6d6',
@@ -146,7 +146,7 @@ export const DetalheDeAluno: React.FC = () => {
             <Grid container item direction='row'>
               <Box display='flex'
                 width={170}
-                height={40}
+                height={35}
                 bgcolor='#eeeeee'
                 marginLeft={3}
                 border='1.5px solid #cccccc'
@@ -160,7 +160,7 @@ export const DetalheDeAluno: React.FC = () => {
                 <VTextField name='email' sx={{ width: '450px'}} placeholder='Informe apenas um email' variant='standard' 
                   inputProps={{sx:{
                     padding:'0px',
-                    height:'40px',
+                    height:'35px',
                     paddingLeft:'15px',
                     paddingRight:'15px',
                     border:'1.5px solid #d6d6d6',
@@ -174,7 +174,7 @@ export const DetalheDeAluno: React.FC = () => {
             <Grid container item direction='row'>
               <Box display='flex'
                 width={170}
-                height={40}
+                height={35}
                 bgcolor='#eeeeee'
                 marginLeft={3}
                 border='1.5px solid #cccccc'
@@ -188,7 +188,7 @@ export const DetalheDeAluno: React.FC = () => {
                 <VTextField name='registroAcademico' sx={{ width: '450px'}} placeholder='Informe o registro acadêmico' variant='standard' 
                   disabled={isLoading || isEdition} inputProps={{sx:{
                     padding:'0px',
-                    height:'40px',
+                    height:'35px',
                     paddingLeft:'15px',
                     paddingRight:'15px',
                     border:'1.5px solid #d6d6d6',
@@ -202,7 +202,7 @@ export const DetalheDeAluno: React.FC = () => {
             <Grid container item direction='row'>
               <Box display='flex'
                 width={170}
-                height={40}
+                height={35}
                 bgcolor='#eeeeee'
                 marginLeft={3}
                 border='1.5px solid #cccccc'
@@ -217,7 +217,7 @@ export const DetalheDeAluno: React.FC = () => {
                   placeholder='Informe o número do documento' variant='standard' 
                   inputProps={{sx:{
                     padding:'0px',
-                    height:'40px',
+                    height:'35px',
                     paddingLeft:'15px',
                     paddingRight:'15px',
                     border:'1.5px solid #d6d6d6',

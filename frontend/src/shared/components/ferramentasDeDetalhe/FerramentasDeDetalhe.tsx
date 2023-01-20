@@ -20,7 +20,7 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
 
   return (
     <Box display='flex' height='100%' width ='100%' flexDirection='column-reverse'  >
-      <Box display='flex' height={120} flexDirection='row-reverse' alignItems='center' >
+      <Box display='flex' height={120} flexDirection='row-reverse' alignItems='flex-start' >
         <Button sx={{
           marginLeft: '20px',
           marginRight: '50px',
