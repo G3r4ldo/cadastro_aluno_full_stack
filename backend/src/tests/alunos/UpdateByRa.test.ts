@@ -7,7 +7,7 @@ describe('Alunos - UpdateByRa',() => {
     it('Atualiza o registro', async () => {
 
        const res1 = await testServer
-          .post('/cadastro').send({
+          .post('/alunos').send({
             cpf: '118.218.366-08' ,
             email: 'andre@hotmail.com',
             nome: 'Andre',

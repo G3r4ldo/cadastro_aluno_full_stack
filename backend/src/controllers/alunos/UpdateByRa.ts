@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import {StatusCodes} from 'http-status-codes';
 import * as yup from 'yup';
-import { IAluno } from "../db/models";
-import { AlunosProvider } from "../db/providers/alunos";
+import { IAluno } from "../../db/models";
+import { AlunosProvider } from "../../db/providers/alunos";
 
-import { validation } from "../shared/middleware";
+import { validation } from "../../shared/middleware";
 
 
 interface IParamProps {

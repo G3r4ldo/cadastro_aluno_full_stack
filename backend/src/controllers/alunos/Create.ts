@@ -2,11 +2,11 @@ import { Request, Response } from "express";
 import {StatusCodes} from 'http-status-codes';
 import * as yup from 'yup';
 
-import {db} from "../db/db";
-import { Knex } from "../db/knex";
-import { IAluno } from "../db/models";
-import { validation } from "../shared/middleware";
-import {AlunosProvider} from "../db/providers/alunos";
+import {db} from "../../db/db";
+import { Knex } from "../../db/knex";
+import { IAluno } from "../../db/models";
+import { validation } from "../../shared/middleware";
+import {AlunosProvider} from "../../db/providers/alunos";
 
 
 

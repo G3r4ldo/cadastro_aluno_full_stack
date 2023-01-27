@@ -61,7 +61,7 @@ const create = async (dados:IDetalheAluno): Promise<number | Error> => {
   
   try{
 
-    const{data} = await Api.post<IDetalheAluno> ('/cadastro', dados);
+    const{data} = await Api.post<IDetalheAluno> ('/alunos', dados);
 
     if(data){
       return data.registroAcademico;

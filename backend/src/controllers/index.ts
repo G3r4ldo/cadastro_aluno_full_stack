@@ -1,18 +1,2 @@
-
-export * from '../controllers';
-import * as create from './Create'
-import * as getAll from './GetAll'
-import * as getByRa from './GetByRa'
-import * as updateByRa from './UpdateByRa'
-import * as deleteByRa from './DeleteByRa'
-
-export const AlunosController = {
-    ...create,
-    ...getAll,
-    ...getByRa,
-    ...updateByRa,
-    ...deleteByRa,
-    
-
-};
-
+export * from './alunos';
+export * from './usuarios';

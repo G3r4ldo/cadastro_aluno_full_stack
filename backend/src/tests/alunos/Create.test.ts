@@ -7,7 +7,7 @@ describe('Alunos - Create',() => {
     it('Cria registro', async () => {
 
        const res1 = await testServer
-          .post('/cadastro').send({
+          .post('/alunos').send({
             cpf: '118.218.366-08' ,
             email: 'andre@hotmail.com',
             nome: 'Andre',
@@ -21,7 +21,7 @@ describe('Alunos - Create',() => {
     it('Tenta criar um registro com CPF/nome curto, email sem @, RA formato string', async () => {
 
        const res1 = await testServer
-          .post('/cadastro').send({
+          .post('/alunos').send({
             cpf: '118.218.366-0' ,
             email: 'andrehotmail.com',
             nome: 12345,
@@ -37,7 +37,7 @@ describe('Alunos - Create',() => {
     it('Tenta criar um registro sem dados', async () => {
 
        const res1 = await testServer
-          .post('/cadastro').send({
+          .post('/alunos').send({
             cpf: '' ,
             email: '',
             nome: '',

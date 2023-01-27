@@ -1,10 +1,9 @@
 import { Request, Response } from "express";
 import {StatusCodes} from 'http-status-codes';
 import * as yup from 'yup';
-import { AlunosProvider } from "../db/providers/alunos";
-import { count } from "../db/providers/alunos/count";
+import { AlunosProvider } from "../../db/providers/alunos";
 
-import { validation } from "../shared/middleware";
+import { validation } from "../../shared/middleware";
 
 
 interface IQueryProps {
