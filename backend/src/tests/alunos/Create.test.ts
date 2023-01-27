@@ -1,13 +1,30 @@
 import { StatusCodes } from "http-status-codes";
-import { testServer } from "../jest.setup";
-
+import {  testServer, token } from "../jest.setup";
 
 describe('Alunos - Create',() => {
 
+   
+
+    it('Tenta criar registro sem token de acesso', async () => {
+
+       const res1 = await testServer
+          .post('/alunos')
+          .send({
+            cpf: '118.218.366-08' ,
+            email: 'andre@hotmail.com',
+            nome: 'Andre',
+            registroAcademico: 100235,
+            })
+        
+        expect(res1.statusCode).toEqual(StatusCodes.UNAUTHORIZED);
+        expect(res1.body).toHaveProperty('errors.default');    
+    });
     it('Cria registro', async () => {
 
        const res1 = await testServer
-          .post('/alunos').send({
+          .post('/alunos')
+          .set({Authorization: `Bearer ${token}`})
+          .send({
             cpf: '118.218.366-08' ,
             email: 'andre@hotmail.com',
             nome: 'Andre',
@@ -21,7 +38,9 @@ describe('Alunos - Create',() => {
     it('Tenta criar um registro com CPF/nome curto, email sem @, RA formato string', async () => {
 
        const res1 = await testServer
-          .post('/alunos').send({
+          .post('/alunos')
+          .set({Authorization: `Bearer ${token}`})
+          .send({
             cpf: '118.218.366-0' ,
             email: 'andrehotmail.com',
             nome: 12345,
@@ -37,7 +56,9 @@ describe('Alunos - Create',() => {
     it('Tenta criar um registro sem dados', async () => {
 
        const res1 = await testServer
-          .post('/alunos').send({
+          .post('/alunos')
+          .set({Authorization: `Bearer ${token}`})
+          .send({
             cpf: '' ,
             email: '',
             nome: '',
@@ -50,5 +71,5 @@ describe('Alunos - Create',() => {
         expect(res1.body).toHaveProperty('errors.body.nome');
         expect(res1.body).toHaveProperty('errors.body.registroAcademico');
     });
-
+  
 });

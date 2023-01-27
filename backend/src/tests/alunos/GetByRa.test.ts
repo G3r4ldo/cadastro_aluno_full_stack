@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { testServer } from "../jest.setup";
+import { testServer, token } from "../jest.setup";
 
 
 describe('Alunos - GetById',() => {
@@ -7,7 +7,7 @@ describe('Alunos - GetById',() => {
     it('Busca registro por ra', async () => {
 
        const res1 = await testServer
-          .post('/alunos').send({
+          .post('/alunos').set({Authorization: `Bearer ${token}`}).send({
             cpf: '118.218.366-08' ,
             email: 'andre@hotmail.com',
             nome: 'Andre',
@@ -18,7 +18,7 @@ describe('Alunos - GetById',() => {
 
         const resBuscada = await testServer
             .get(`/alunos/${res1.body}`)
-            .send();
+            .set({Authorization: `Bearer ${token}`}).send();
 
         expect(resBuscada.statusCode).toEqual(StatusCodes.OK);    
         expect(resBuscada.body).toHaveProperty('nome');    
@@ -27,7 +27,7 @@ describe('Alunos - GetById',() => {
     it('Tenta apagar registro que não existe', async () => {
 
        const res1 = await testServer
-          .get('/alunos/99999').send();
+          .get('/alunos/99999').set({Authorization: `Bearer ${token}`}).send();
         
         expect(res1.statusCode).toEqual(StatusCodes.INTERNAL_SERVER_ERROR);
         expect(res1.body).toHaveProperty('errors.default');

@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { testServer } from "../jest.setup";
+import { testServer, token } from "../jest.setup";
 
 
 describe('Alunos - UpdateByRa',() => {
@@ -7,7 +7,7 @@ describe('Alunos - UpdateByRa',() => {
     it('Atualiza o registro', async () => {
 
        const res1 = await testServer
-          .post('/alunos').send({
+          .post('/alunos').set({Authorization: `Bearer ${token}`}).send({
             cpf: '118.218.366-08' ,
             email: 'andre@hotmail.com',
             nome: 'Andre',
@@ -18,7 +18,7 @@ describe('Alunos - UpdateByRa',() => {
 
         const resBuscada = await testServer
             .put(`/alunos/${res1.body}`)
-            .send({
+            .set({Authorization: `Bearer ${token}`}).send({
                 nome: 'Lucas',
                 email: 'lucas@hotmail.com'
             });
@@ -30,7 +30,7 @@ describe('Alunos - UpdateByRa',() => {
     it('Tenta atualizar registro que não existe', async () => {
 
        const res1 = await testServer
-          .put('/alunos/99999').send({
+          .put('/alunos/99999').set({Authorization: `Bearer ${token}`}).send({
             nome: 'Andre',
             email: 'andre@hotmail.com'
           });

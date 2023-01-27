@@ -14,6 +14,6 @@ router.put('/alunos/:registroAcademico',  ensureAuthenticated,AlunosController.u
 router.delete('/alunos/:registroAcademico', ensureAuthenticated, AlunosController.deleteByRaValidation, AlunosController.deleteByRa);
 
 
-router.post('/entrar',  usuariosController.signInValidation, usuariosController.signIn);
 router.post('/cadastrar',  usuariosController.signUpValidation, usuariosController.signUp);
+router.post('/entrar',  usuariosController.signInValidation, usuariosController.signIn);
 
