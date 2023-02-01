@@ -2,6 +2,7 @@
 import {Routes,Route, Navigate} from 'react-router-dom';
 import { DetalheDeAluno } from '../pages/detalheAlunos/DetalheDeAluno';
 import { ListagemDeAluno } from '../pages/listagemAlunos/ListagemDeAluno';
+import {TelaDeLogin} from '../pages/telaDeLogin/telaDeLogin';
 
 
 
@@ -18,7 +19,10 @@ export const AppRoutes = () => {
 
       <Route path='/alunos/detalhe/:registroAcademico' element = {<DetalheDeAluno/>} />
 
-     	 <Route path="*" element={<Navigate to="/listagem-de-alunos" />}/>
+
+      <Route path='/login' element = {<TelaDeLogin/>} />
+
+     	 <Route path="*" element={<Navigate to='/login' />}/>
         
         
     </Routes>

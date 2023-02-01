@@ -4,9 +4,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
 
 interface ILayoutOfPage {
-    menu: React.ReactNode;
-    titulo: string;
-    paginaResponsiva: React.ReactNode;
+    menu?: React.ReactNode;
+    titulo?: string;
+    paginaResponsiva?: React.ReactNode;
     children?: React.ReactNode;
     children2?: React.ReactNode;
 }
